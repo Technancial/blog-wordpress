@@ -1,0 +1,59 @@
+/*
+Theme Name: Mi Tema Personalizado
+Theme URI: http://midominio.com
+Author: Mi Nombre
+Description: Tema personalizado basado en la identidad visual del logo.
+Version: 1.0
+License: GPLv2 or later
+*/
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* 🔵 Encabezados en azul */
+h1, h2, h3 {
+    color: #007BB5;
+}
+
+/* 🟠 Botones en naranja */
+button, .btn {
+    background-color: #F57C00;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    transition: 0.3s;
+}
+
+button:hover, .btn:hover {
+    background-color: #FFC107;
+}
+
+/* 🟢 Enlaces en verde */
+a {
+    color: #7CB342;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #F57C00;
+}
+
+/* 🔹 Personalizar el header */
+.site-header {
+    background-color: #007BB5;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 🔹 Pie de página */
+.site-footer {
+    background-color: #7CB342;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}

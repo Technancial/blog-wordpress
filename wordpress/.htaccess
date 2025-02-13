@@ -1,0 +1,52 @@
+# 🔥 Activar reescritura de URLs en WordPress
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    RewriteBase /
+    RewriteRule ^index\.php$ - [L]
+
+    # 🔹 Redirigir todo excepto archivos existentes y directorios a index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.php [L]
+</IfModule>
+
+# ✅ Permitir acceso a load-styles.php
+<FilesMatch "^(load-styles\.php|load-scripts\.php)$">
+    Require all granted
+</FilesMatch>
+
+# ✅ Permitir acceso a archivos JS, CSS y fuentes de WordPress
+<FilesMatch "\.(js|css|woff|woff2|ttf|svg|jpg|png|gif|webp|ico|map|json)$">
+     Header set Access-Control-Allow-Origin "self https://fonts.gstatic.com"
+</FilesMatch>
+
+# 🔥 Permitir acceso a wp-includes/js y wp-includes/css
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_URI} ^/wp-includes/(js|css|blocks|dist)/
+    RewriteRule .* - [L]
+</IfModule>
+
+# 🚫 Bloquear acceso a archivos sensibles
+<FilesMatch "(^\.htaccess|^\.htpasswd|wp-config\.php|php.ini|php5.ini|readme.html|license.txt)">
+    Require all denied
+</FilesMatch>
+
+# 🔥 Seguridad en wp-admin (evita acceso a XML-RPC)
+<Files xmlrpc.php>
+    Require all denied
+</Files>
+
+# 🚀 Permitir acceso a admin-ajax.php (necesario para AJAX en WordPress)
+<Files admin-ajax.php>
+    Require all granted
+</Files>
+
+# 🔥 Seguridad adicional con headers HTTP
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Content-Security-Policy "default-src 'self' data:; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self' data: https://secure.gravatar.com;;"
+</IfModule>
