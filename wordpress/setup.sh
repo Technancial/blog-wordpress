@@ -21,7 +21,7 @@ fi
 
 # Activar los plugins sin volver a descargarlos
 echo "✅ Activando plugins de seguridad..."
-wp plugin activate wordfence sucuri-scanner limit-login-attempts-reloaded all-in-one-wp-security-and-firewall --allow-root --path=/var/www/html
+#wp plugin activate wordfence sucuri-scanner limit-login-attempts-reloaded all-in-one-wp-security-and-firewall --allow-root --path=/var/www/html
 
 # Configurar los plugins después de la activación
 #echo "⚙️ Ejecutando configuración de plugins de seguridad..."
