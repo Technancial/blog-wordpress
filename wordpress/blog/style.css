@@ -1,59 +1,49 @@
 /*
-Theme Name: Mi Tema Personalizado
-Theme URI: http://midominio.com
-Author: Mi Nombre
-Description: Tema personalizado basado en la identidad visual del logo.
+Theme Name: Technancial Theme
+Theme URI: http://example.com/technancial-theme
+Author: Tu Nombre
+Author URI: http://example.com
+Description: Un theme personalizado para Technancial con portada, listado de blogs y página de contacto.
 Version: 1.0
-License: GPLv2 or later
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: technancial
 */
-
+/* === style.css === */
+/*
+Aquí definimos los estilos principales del tema.
+Personaliza colores y fuentes según el logo.
+*/
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     color: #333;
 }
-
-/* 🔵 Encabezados en azul */
-h1, h2, h3 {
-    color: #007BB5;
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
 }
-
-/* 🟠 Botones en naranja */
-button, .btn {
-    background-color: #F57C00;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    transition: 0.3s;
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
 }
-
-button:hover, .btn:hover {
-    background-color: #FFC107;
+nav ul li {
+    display: inline;
+    margin: 0 10px;
 }
-
-/* 🟢 Enlaces en verde */
-a {
-    color: #7CB342;
+nav ul li a {
+    color: #fff;
     text-decoration: none;
 }
-
-a:hover {
-    color: #F57C00;
-}
-
-/* 🔹 Personalizar el header */
-.site-header {
-    background-color: #007BB5;
-    color: white;
-    padding: 20px;
+.footer {
+    background-color: #222;
+    color: #fff;
     text-align: center;
-}
-
-/* 🔹 Pie de página */
-.site-footer {
-    background-color: #7CB342;
-    color: white;
-    text-align: center;
-    padding: 15px;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

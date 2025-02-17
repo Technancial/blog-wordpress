@@ -18,7 +18,7 @@
 
 # ✅ Permitir acceso a archivos JS, CSS y fuentes de WordPress
 <FilesMatch "\.(js|css|woff|woff2|ttf|svg|jpg|png|gif|webp|ico|map|json)$">
-     Header set Access-Control-Allow-Origin "self https://fonts.gstatic.com"
+     Header set Access-Control-Allow-Origin "*"
 </FilesMatch>
 
 # 🔥 Permitir acceso a wp-includes/js y wp-includes/css
@@ -48,5 +48,5 @@
     Header always set X-XSS-Protection "1; mode=block"
     Header always set X-Content-Type-Options "nosniff"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    Header always set Content-Security-Policy "default-src 'self' data:; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self' data: https://secure.gravatar.com;;"
+    Header always set Content-Security-Policy "default-src 'self'; frame-src 'self' blob: https://wp-themes.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src * data: blob:; frame-ancestors 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self';"
 </IfModule>

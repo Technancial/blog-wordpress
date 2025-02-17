@@ -22,7 +22,7 @@ USER www-data
 WORKDIR /usr/src/wp-plugins
 RUN curl -O https://downloads.wordpress.org/plugin/wordfence.8.0.3.zip && \
     curl -O https://downloads.wordpress.org/plugin/sucuri-scanner.1.9.8.zip && \
-    #curl -O https://downloads.wordpress.org/plugin/limit-login-attempts-reloaded.2.26.17.zip && \
+    curl -O https://downloads.wordpress.org/plugin/limit-login-attempts-reloaded.2.26.17.zip && \
     curl -O https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.5.3.8.zip && \
     curl -O https://downloads.wordpress.org/plugin/wps-hide-login.1.9.17.1.zip && \
     curl -O https://downloads.wordpress.org/plugin/updraftplus.1.25.1.zip
@@ -30,7 +30,7 @@ RUN curl -O https://downloads.wordpress.org/plugin/wordfence.8.0.3.zip && \
 WORKDIR /var/www/html
 RUN unzip -o "/usr/src/wp-plugins/wordfence.8.0.3.zip" -d /var/www/html/wp-content/plugins/ && \
     unzip -o "/usr/src/wp-plugins/sucuri-scanner.1.9.8.zip" -d /var/www/html/wp-content/plugins/ && \
-    #unzip -o "/usr/src/wp-plugins/limit-login-attempts-reloaded.2.26.17.zip" -d /var/www/html/wp-content/plugins/ && \
+    unzip -o "/usr/src/wp-plugins/limit-login-attempts-reloaded.2.26.17.zip" -d /var/www/html/wp-content/plugins/ && \
     unzip -o "/usr/src/wp-plugins/all-in-one-wp-security-and-firewall.5.3.8.zip" -d /var/www/html/wp-content/plugins/ && \
     unzip -o "/usr/src/wp-plugins/wps-hide-login.1.9.17.1.zip" -d /var/www/html/wp-content/plugins/ && \
     unzip -o "/usr/src/wp-plugins/updraftplus.1.25.1.zip" -d /var/www/html/wp-content/plugins/ 

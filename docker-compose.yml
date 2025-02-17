@@ -29,6 +29,8 @@ services:
       WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
       WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
       WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+    volumes:
+      - ./wordpress/blog:/var/www/html/wp-content/themes/tema-blog
     networks:
       - app-network
 
